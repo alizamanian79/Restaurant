@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/restaurant/static/css/main.9c8d7551.css",
+    "main.js": "/restaurant/static/js/main.a2e23c87.js",
+    "static/media/YekanBakhRegular.otf": "/restaurant/static/media/YekanBakhRegular.02263ae868322a9df130.otf",
+    "static/media/YekanBakhBold.otf": "/restaurant/static/media/YekanBakhBold.637774a626977e4779af.otf",
+    "index.html": "/restaurant/index.html",
+    "main.9c8d7551.css.map": "/restaurant/static/css/main.9c8d7551.css.map",
+    "main.a2e23c87.js.map": "/restaurant/static/js/main.a2e23c87.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c8d7551.css",
+    "static/js/main.a2e23c87.js"
+  ]
+}
