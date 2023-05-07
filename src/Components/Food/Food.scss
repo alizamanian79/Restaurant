@@ -64,6 +64,12 @@
                     z-index: 1;
                     top: -5px;
                     left: -27px;
+                    animation-name: dishRotate;
+                    animation-duration: 9s;
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: cubic-bezier(.14, .75, .2, 1.01);
+                    animation-iteration-count: infinite;
                 }
 
                 .tCaption {
@@ -85,7 +91,7 @@
                 .grid {
                     width: 100%;
                     height: 18%;
-                    
+
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
@@ -99,48 +105,28 @@
                         justify-content: flex-end;
                         align-items: center;
 
-                        .squar {
-                            padding: 8px 8px;
-                            margin: 0 5px;
-                            border-radius: 3px;
-                            -webkit-border-radius: 3px;
-                            -moz-border-radius: 3px;
-                            -ms-border-radius: 3px;
-                            -o-border-radius: 3px;
-                            border: 2px solid #F24E17;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            color: white;
-                        }
+
 
                         .squar2 {
                             color: white;
                             display: flex;
-                            justify-content: center;
+                            justify-content: space-around;
                             align-items: center;
-                            padding: 8px 8px;
+                            padding: 3px 24px;
                             margin: 0 5px;
                             background-color: #F24E17;
-                            border-radius: 3px;
-                            -webkit-border-radius: 3px;
-                            -moz-border-radius: 3px;
-                            -ms-border-radius: 3px;
-                            -o-border-radius: 3px;
+                            border-radius: 15px;
+                            -webkit-border-radius: 15px;
+                            -moz-border-radius: 15px;
+                            -ms-border-radius: 15px;
+                            -o-border-radius: 15px;
                             border: 2px solid #F24E17;
+
                         }
 
 
 
-                        .inptNumber {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 100%;
-                            height: 15px;
-                           
-                            margin: 0 5px;
-                        }
+
 
 
                     }
@@ -171,4 +157,225 @@
 
         }
     }
+}
+
+
+.dvOrder {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+
+
+
+    .order {
+        width: 97%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-right: none;
+        border-left: none;
+        border-top: 2px solid white;
+        align-items: center;
+
+
+        h3 {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            text-align: right;
+            font-family: yekanBakhtBold;
+            color: white;
+            margin: 15px 0;
+            font-size: 19px;
+
+        }
+
+
+
+        table {
+            width: 97%;
+            direction: rtl;
+            text-align: center;
+            border-collapse: collapse;
+
+            .rowStyle {
+                background-color: rgba(196, 196, 196, 0.336);
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+
+                p {
+                    width: 92%;
+                    text-align: right;
+                    padding: 5px 0;
+                    font-family: yekanBakhtBold;
+                    color: white;
+                    font-size: 19px;
+
+                }
+
+                tr {
+                    width: 100%;
+                    margin: 0 0;
+                    background-color: transparent;
+                    display: flex;
+                    flex-direction: row !important;
+
+                    td {
+
+                        width: 33.33%;
+                        padding: 8px 0;
+                        font-family: yekanBakht;
+                        color: white;
+                        font-size: 19px;
+                        background-color: transparent;
+
+                        .dvCount {
+                            width: 100% !important;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+
+
+                            .squar {
+                                padding: 10px 12px;
+                                margin: 0 5px;
+                                background-color: #F24E17;
+                                border-radius: 3px;
+                                -webkit-border-radius: 3px;
+                                -moz-border-radius: 3px;
+                                -ms-border-radius: 3px;
+                                -o-border-radius: 3px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: white;
+                            }
+
+                            :nth-child(2) {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 24%;
+                                height: 28px;
+                                TEXT-ALIGN: CENTER;
+                                margin: 0 5px;
+                                border-radius: 5px;
+                                outline: none;
+                                caret-color: red;
+                            }
+
+
+                        }
+
+
+                        .dvImage {
+                            position: relative;
+
+                            img {
+                                width: 104px;
+                                height: auto;
+                                position: absolute;
+                                top: -56px;
+                                left: -1px;
+                                animation-name: orderDishRotate;
+                                animation-duration: 7s;
+                                animation-direction: normal;
+                                animation-fill-mode: forwards;
+                                animation-timing-function: cubic-bezier(.14, .75, .2, 1.01);
+                                animation-iteration-count: infinite;
+                            }
+                        }
+
+
+                    }
+
+                }
+            }
+
+        }
+
+
+
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+@keyframes dishRotate {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+
+ 
+}
+
+
+@keyframes orderDishRotate {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+}
+
+    100%{
+        transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -o-transform: rotate(-360deg);
+}
+
+ 
 }

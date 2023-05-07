@@ -11,12 +11,29 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
 
+
 function Food() {
 
-  const [first, setfirst] = useState(0)
+
+
+  
+
+
 
   const emty = "https://i.ibb.co/9hPMnPG/emtyDish.png";
 
+ 
+
+  const [dtOrder, setDtOrder] = useState([
+    {orderName:"گوشت",orderPrice:245000,orderCount:1,orderImg:"https://i.ibb.co/0j9SzKq/Group-5.png"},
+    {orderName:"سالاد",orderPrice:245000,orderCount:1,orderImg:"https://i.ibb.co/8MtfNcZ/salad.png"}
+  ])
+
+
+
+
+
+  
   const [dtFood, setDtFood] = useState([
 
     {
@@ -72,7 +89,7 @@ function Food() {
   ])
 
 
-  const initialFunFood = () =>{
+  const initialFunFood = () => {
 
     checkImg();
 
@@ -80,7 +97,6 @@ function Food() {
 
 
   }
-
 
   const checkImg = () => {
 
@@ -110,10 +126,21 @@ function Food() {
   }
 
 
+
+
+const handleChangeOrderCount = (x) => {
+ var a = x.orderCount+1 ;
+console.log(a)
+return a
+}
+
+
+
+
+
   useEffect(() => {
 
   }, [initialFunFood()])
-
 
 
   return (
@@ -167,13 +194,18 @@ function Food() {
 
 
                       <div className="left">
-                        <div className="squar">
+
+                        {/* <div className="squar">
                         <FontAwesomeIcon icon={faPlus} />
                         </div>
-                        <p className='inptNumber'>10</p>
+
+                        <p className='inptNumber'>10</p> */}
+
                         <div className="squar2">
-                        <FontAwesomeIcon icon={faMinus} />
+                          افزودن
+                          <FontAwesomeIcon icon={faPlus} style={{ margin: "0px 5px 0px 0px" }} />
                         </div>
+
                       </div>
 
 
@@ -202,6 +234,66 @@ function Food() {
       ))
       }
 
+
+      <div className='dvOrder'>
+        <div className="order">
+          <h3>سفارش شما</h3>
+
+
+          <table>
+
+          
+          { dtOrder.map((item)=>(
+             <div className='rowStyle'>
+              <p>{item.orderName}</p>
+
+              <tr>
+                <td>{item.orderPrice} تومان</td>
+
+
+                <td>
+                     <div className='dvCount'>
+
+                       <div className="squar">
+                        <FontAwesomeIcon icon={faPlus} style={{fontSize:"15px"}}  />
+                        </div> 
+
+                        
+                        <input type="number"  className='inptNumber' value={0} />
+
+
+                        <div className="squar">
+                        <FontAwesomeIcon icon={faMinus} style={{fontSize:"15px"}} />
+                        </div> 
+
+
+
+                      </div>
+
+                </td>
+
+
+
+                <td><div className="dvImage"> <img  src={item.orderImg} /></div></td>
+              </tr>
+
+
+            </div>
+          ))
+
+          }
+  
+
+
+           
+
+          </table>
+
+
+
+
+        </div>
+      </div>
 
     </>
 
