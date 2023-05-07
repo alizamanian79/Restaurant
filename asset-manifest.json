@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/restaurant/static/css/main.9c8d7551.css",
-    "main.js": "/restaurant/static/js/main.1bef80c0.js",
+    "main.css": "/restaurant/static/css/main.f173200a.css",
+    "main.js": "/restaurant/static/js/main.8e80dc45.js",
     "static/media/YekanBakhRegular.otf": "/restaurant/static/media/YekanBakhRegular.02263ae868322a9df130.otf",
     "static/media/YekanBakhBold.otf": "/restaurant/static/media/YekanBakhBold.637774a626977e4779af.otf",
     "index.html": "/restaurant/index.html",
-    "main.9c8d7551.css.map": "/restaurant/static/css/main.9c8d7551.css.map",
-    "main.1bef80c0.js.map": "/restaurant/static/js/main.1bef80c0.js.map"
+    "main.f173200a.css.map": "/restaurant/static/css/main.f173200a.css.map",
+    "main.8e80dc45.js.map": "/restaurant/static/js/main.8e80dc45.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c8d7551.css",
-    "static/js/main.1bef80c0.js"
+    "static/css/main.f173200a.css",
+    "static/js/main.8e80dc45.js"
   ]
 }
