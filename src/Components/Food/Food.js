@@ -11,29 +11,27 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
 
+const initialValues = {
+  inpt:""
+};
 
 function Food() {
 
 
-
+const [state,setState]=useState(initialValues);
   
 
 
-
-  const emty = "https://i.ibb.co/9hPMnPG/emtyDish.png";
 
  
 
+ 
   const [dtOrder, setDtOrder] = useState([
-    {orderName:"گوشت",orderPrice:245000,orderCount:1,orderImg:"https://i.ibb.co/0j9SzKq/Group-5.png"},
-    {orderName:"سالاد",orderPrice:245000,orderCount:1,orderImg:"https://i.ibb.co/8MtfNcZ/salad.png"}
+    {orderName:"گوشت",orderPrice:245000,orderCount:1,orderImg:"https://i.ibb.co/0j9SzKq/Group-5.png"}
   ])
 
 
-
-
-
-  
+  const emty = "https://i.ibb.co/9hPMnPG/emtyDish.png";
   const [dtFood, setDtFood] = useState([
 
     {
@@ -87,8 +85,6 @@ function Food() {
 
 
   ])
-
-
   const initialFunFood = () => {
 
     checkImg();
@@ -97,7 +93,6 @@ function Food() {
 
 
   }
-
   const checkImg = () => {
 
     for (let i = 0; i < dtFood.length; i++) {
@@ -128,10 +123,14 @@ function Food() {
 
 
 
-const handleChangeOrderCount = (x) => {
- var a = x.orderCount+1 ;
-console.log(a)
-return a
+const handleChangeOrderCount = (evt) => {
+var {name,value}=evt.target;
+setState(
+  {
+    ...state,
+    [name]:value
+  }
+)
 }
 
 
@@ -259,7 +258,7 @@ return a
                         </div> 
 
                         
-                        <input type="number"  className='inptNumber' value={0} />
+                        <input type="number" name="inpt" className='inptNumber' value={state.inpt} onChange={handleChangeOrderCount} />
 
 
                         <div className="squar">
