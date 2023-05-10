@@ -133,7 +133,9 @@ setState(
 )
 }
 
+const handleAddToOrder = (item) =>{
 
+}
 
 
 
@@ -200,7 +202,7 @@ setState(
 
                         <p className='inptNumber'>10</p> */}
 
-                        <div className="squar2">
+                        <div className="squar2" onClick={handleAddToOrder}>
                           افزودن
                           <FontAwesomeIcon icon={faPlus} style={{ margin: "0px 5px 0px 0px" }} />
                         </div>
