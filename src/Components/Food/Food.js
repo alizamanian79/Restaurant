@@ -1,14 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import "./Food.scss";
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faMinus } from '@fortawesome/free-solid-svg-icons'
-
-
-
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import FoodTemplate from './FoodTemplate';
 
 function Food() {
 
@@ -26,7 +23,19 @@ function Food() {
     { fFilter: "سالاد", fName: "شیرازی", fPrice: "20000" },
     { fFilter: "سالاد", fName: "اندونزی", fPrice: "80000" },
     { fFilter: "نوشیدنی", fName: "کوکاکولا مشکی", fPrice: 20000 },
-    { fFilter: "کیک ها", fName: "", fPrice: "برایس" }
+    { fFilter: "نوشیدنی", fName: "ماشعیر", fPrice: 20000 },
+    { fFilter: "نوشیدنی", fName: "دوغ", fPrice: 20000 },
+    { fFilter: "نوشیدنی", fName: "دلستر", fPrice: 20000 },
+    { fFilter: "کیک", fName: "برایس", fPrice: "برایس" },
+    { fFilter: "کیک", fName: "توت فرنگی", fPrice: "برایس" }
+
+  ])
+
+  const [dtCategoti, setdtCategoti] = useState([
+    {cName:"پیتزا"},
+    {cName:"سالاد"},
+    {cName:"کیک"},
+    {cName:"نوشیدنی"}
 
   ])
 
@@ -36,50 +45,54 @@ function Food() {
 
 
   return (
-
     <>
 
 
-<div className='dvFood'>
-    <div className='food'>
-      <h4>{props.foodFilter}</h4>
 
-      <div className='scroll'>
-        <div className="cardFood">
-
-          <p>پیتزا</p>
+{
+  dtCategoti.map((item)=>(
 
 
-          {/* <img className='dvFoodImage' src={{ emty }} /> */}
+  <FoodTemplate foodtype={item.cName}>
+{
+              dtFood.filter(foodFilter =>foodFilter.fFilter==item.cName).map((item)=>(
+                <React.Fragment>
+                  <div className="cardFood">
 
-          <p className='tCaption'>توضیحات</p>
-          <p className='caption'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-          <div className='grid'>
+              <p>{item.fName}</p>
+                    {/* <img className='dvFoodImage' src={{ emty }} /> */}
 
-            <div className="right">
-              <p>120000</p>
-            </div>
+                    <p className='tCaption'>توضیحات</p>
+                    <p className='caption'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                    <div className='grid'>
 
-            <div className="left">
+                      <div className="right">
+                        <p>120000</p>
+                      </div>
 
-              {/* <div className="squar">
-                    <FontAwesomeIcon icon={faPlus} />
+                      <div className="left">
+
+                        <div className="squar2" onClick={()=>alert(item.fFilter+" "+item.fName)}>
+                          افزودن
+                          <FontAwesomeIcon icon={faPlus} style={{ margin: "0px 5px 0px 0px" }} />
+                        </div>
+
+                      </div>
                     </div>
-
-                    <p className='inptNumber'>10</p> */}
-
-              <div className="squar2">
-                افزودن
-                <FontAwesomeIcon icon={faPlus} style={{ margin: "0px 5px 0px 0px" }} />
-              </div>
-
+      
+              {/* <button onClick={()=>{alert(x.img)}}>click</button> */}
             </div>
-          </div>
-          {/* <button onClick={()=>{alert(x.img)}}>click</button> */}
-        </div>
-      </div>
-    </div>
-  </div>
+                </React.Fragment>
+              ))
+            }
+</FoodTemplate>
+
+
+  ))
+}
+ 
+
+
 
 
 
@@ -144,8 +157,6 @@ function Food() {
       </div>
 
     </>
-
-
   )
 }
 
