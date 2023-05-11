@@ -24,20 +24,28 @@ const [state, setState] = useState(initialValue)
     { cName: "نوشیدنی" }
 
   ])
+
+
+
+  // https://i.ibb.co/8MtfNcZ/salad.png
+  // https://i.ibb.co/Nn0wZDp/cake2.png
+  // https://i.ibb.co/9hPMnPG/emtyDish.png
+  // https://i.ibb.co/s6ZTQzS/cake1.png
+
   const [dtFood, setDtFood] = useState([
-    { fFilter: "پیتزا", fName: "گوشت و قارچ", fPrice: 22000 },
-    { fFilter: "پیتزا", fName: "پپرونی", fPrice: 300000 },
-    { fFilter: "پیتزا", fName: "سیر استک", fPrice: 350000 },
-    { fFilter: "سالاد", fName: "سزار", fPrice: "145000" },
-    { fFilter: "سالاد", fName: "فصل", fPrice: "35000" },
-    { fFilter: "سالاد", fName: "شیرازی", fPrice: "20000" },
-    { fFilter: "سالاد", fName: "اندونزی", fPrice: "80000" },
-    { fFilter: "نوشیدنی", fName: "کوکاکولا مشکی", fPrice: 20000 },
-    { fFilter: "نوشیدنی", fName: "ماشعیر", fPrice: 20000 },
-    { fFilter: "نوشیدنی", fName: "دوغ", fPrice: 20000 },
-    { fFilter: "نوشیدنی", fName: "دلستر", fPrice: 20000 },
-    { fFilter: "کیک", fName: "برایس", fPrice: 102000 },
-    { fFilter: "کیک", fName: "توت فرنگی", fPrice: 40000 }
+    { fFilter: "پیتزا", fName: "گوشت و قارچ", fPrice: 22000,fImage:"https://i.ibb.co/0j9SzKq/Group-5.png" },
+    { fFilter: "پیتزا", fName: "پپرونی", fPrice: 300000,fImage:"https://i.ibb.co/9hPMnPG/emtyDish.png" },
+    { fFilter: "پیتزا", fName: "سیر استک", fPrice: 350000,fImage:"https://i.ibb.co/0j9SzKq/Group-5.png" },
+    { fFilter: "سالاد", fName: "سزار", fPrice: "145000",fImage:"https://i.ibb.co/8MtfNcZ/salad.png" },
+    { fFilter: "سالاد", fName: "فصل", fPrice: "35000",fImage:"https://i.ibb.co/8MtfNcZ/salad.png" },
+    { fFilter: "سالاد", fName: "شیرازی", fPrice: "20000",fImage:"https://i.ibb.co/9hPMnPG/emtyDish.png" },
+    { fFilter: "سالاد", fName: "اندونزی", fPrice: "80000",fImage:"https://i.ibb.co/9hPMnPG/emtyDish.png" },
+    { fFilter: "نوشیدنی", fName: "کوکاکولا مشکی", fPrice: 20000,fImage:"https://i.ibb.co/9hPMnPG/emtyDish.png" },
+    { fFilter: "نوشیدنی", fName: "ماشعیر", fPrice: 20000,fImage:"https://i.ibb.co/9hPMnPG/emtyDish.png" },
+    { fFilter: "نوشیدنی", fName: "دوغ", fPrice: 20000,fImage:"https://i.ibb.co/9hPMnPG/emtyDish.png" },
+    { fFilter: "نوشیدنی", fName: "دلستر", fPrice: 20000,fImage:"https://i.ibb.co/9hPMnPG/emtyDish.png" },
+    { fFilter: "کیک", fName: "برایس", fPrice: 102000,fImage:"https://i.ibb.co/s6ZTQzS/cake1.png" },
+    { fFilter: "کیک", fName: "توت فرنگی", fPrice: 40000,fImage:"https://i.ibb.co/Nn0wZDp/cake2.png" }
 
   ])
 
@@ -52,7 +60,7 @@ const [count, setCount] = useState(1)
 
   const addObjectOrder = (item) => {
     setOrderSatus(true)
-    const newObject = { orderName: item.fFilter + " " + item.fName, orderPrice: item.fPrice, orderCount:1, orderImg: "https://i.ibb.co/0j9SzKq/Group-5.png" };
+    const newObject = { orderName: item.fFilter + " " + item.fName, orderPrice: item.fPrice, orderCount:1, orderImg:item.fImage };
     setDtOrder([...dtOrder, newObject]);
   }
 
@@ -82,7 +90,7 @@ const handleChange = (e) => {
                   <div className="cardFood">
 
                     <p>{item.fName}</p>
-                    {/* <img className='dvFoodImage' src={{ emty }} /> */}
+                    <img className='dvFoodImage' src={item.fImage} />
 
                     <p className='tCaption'>توضیحات</p>
                     <p className='caption'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
