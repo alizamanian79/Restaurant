@@ -1,5 +1,5 @@
 
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Food.scss";
 
 
@@ -7,13 +7,23 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FoodTemplate from './FoodTemplate';
 
+const initialValue ={
+inptCount:1 
+}
+
 function Food() {
 
-  // Food Data
-  const [dtOrder, setDtOrder] = useState([
-    { orderName: "گوشت", orderPrice: 245000, orderCount: 1, orderImg: "https://i.ibb.co/0j9SzKq/Group-5.png" }
-  ])
+const [state, setState] = useState(initialValue)
 
+  // Food Data
+
+  const [dtCategoti, setdtCategoti] = useState([
+    { cName: "پیتزا" },
+    { cName: "سالاد" },
+    { cName: "کیک" },
+    { cName: "نوشیدنی" }
+
+  ])
   const [dtFood, setDtFood] = useState([
     { fFilter: "پیتزا", fName: "گوشت و قارچ", fPrice: 22000 },
     { fFilter: "پیتزا", fName: "پپرونی", fPrice: 300000 },
@@ -26,18 +36,32 @@ function Food() {
     { fFilter: "نوشیدنی", fName: "ماشعیر", fPrice: 20000 },
     { fFilter: "نوشیدنی", fName: "دوغ", fPrice: 20000 },
     { fFilter: "نوشیدنی", fName: "دلستر", fPrice: 20000 },
-    { fFilter: "کیک", fName: "برایس", fPrice: "برایس" },
-    { fFilter: "کیک", fName: "توت فرنگی", fPrice: "برایس" }
+    { fFilter: "کیک", fName: "برایس", fPrice: 102000 },
+    { fFilter: "کیک", fName: "توت فرنگی", fPrice: 40000 }
 
   ])
 
-  const [dtCategoti, setdtCategoti] = useState([
-    {cName:"پیتزا"},
-    {cName:"سالاد"},
-    {cName:"کیک"},
-    {cName:"نوشیدنی"}
+  const [dtOrder, setDtOrder] = useState([])
 
-  ])
+  const [orderSatus, setOrderSatus] = useState(false);
+
+
+const [count, setCount] = useState(1)
+
+
+
+  const addObjectOrder = (item) => {
+    setOrderSatus(true)
+    const newObject = { orderName: item.fFilter + " " + item.fName, orderPrice: item.fPrice, orderCount:1, orderImg: "https://i.ibb.co/0j9SzKq/Group-5.png" };
+    setDtOrder([...dtOrder, newObject]);
+  }
+
+const handleChange = (e) => {
+  const { name,value } = e.target;
+  setState({ ...state, [name]: value })
+}
+
+
 
 
 
@@ -47,19 +71,17 @@ function Food() {
   return (
     <>
 
+      {
+        dtCategoti.map((item) => (
 
 
-{
-  dtCategoti.map((item)=>(
-
-
-  <FoodTemplate foodtype={item.cName}>
-{
-              dtFood.filter(foodFilter =>foodFilter.fFilter==item.cName).map((item)=>(
+          <FoodTemplate foodtype={item.cName}>
+            {
+              dtFood.filter(foodFilter => foodFilter.fFilter == item.cName).map((item) => (
                 <React.Fragment>
                   <div className="cardFood">
 
-              <p>{item.fName}</p>
+                    <p>{item.fName}</p>
                     {/* <img className='dvFoodImage' src={{ emty }} /> */}
 
                     <p className='tCaption'>توضیحات</p>
@@ -72,89 +94,96 @@ function Food() {
 
                       <div className="left">
 
-                        <div className="squar2" onClick={()=>alert(item.fFilter+" "+item.fName)}>
+                        <div className="squar2" onClick={() => addObjectOrder(item)}>
                           افزودن
                           <FontAwesomeIcon icon={faPlus} style={{ margin: "0px 5px 0px 0px" }} />
                         </div>
 
                       </div>
                     </div>
-      
-              {/* <button onClick={()=>{alert(x.img)}}>click</button> */}
-            </div>
+
+                    {/* <button onClick={()=>{alert(x.img)}}>click</button> */}
+                  </div>
                 </React.Fragment>
               ))
             }
-</FoodTemplate>
+          </FoodTemplate>
 
 
-  ))
-}
- 
-
+        ))
+      }
 
 
 
 
-      <div className='dvOrder'>
-        <div className="order">
+      {orderSatus &&
+        <div className='dvOrder'>
+          <div className="order">
 
-          {/* Filter */}
-          <h3>سفارش شما</h3>
-
-
-          <table>
-            {dtOrder.map((item) => (
-              <div className='rowStyle'>
-                <p>{item.orderName}</p>
-
-                <tr>
-                  <td>{item.orderPrice} تومان</td>
+            {/* Filter */}
+            <h3>سفارش شما</h3>
 
 
-                  <td>
-                    <div className='dvCount'>
+            <table>
+              {dtOrder.map((item) => (
+                <div className='rowStyle'>
+                  <p>{item.orderName}</p>
 
-                      <div className="squar">
-                        <FontAwesomeIcon icon={faPlus} style={{ fontSize: "15px" }} />
+                  <tr>
+                    <td>{item.orderPrice} تومان</td>
+
+
+                    <td>
+                      <div className='dvCount'>
+
+                        <div className="squar">
+                          <FontAwesomeIcon icon={faPlus} style={{ fontSize: "15px" }} />
+                        </div>
+
+
+                        {/* <p  className='inptNumber' />  */}
+                        <input type="number" name='inptCount' value={state.inptCount} onChange={(e)=>handleChange(e)}/>
+
+
+                        <div className="squar">
+                          <FontAwesomeIcon icon={faMinus} style={{ fontSize: "15px" }} />
+                        </div>
+
+
+
                       </div>
 
-
-                      <input type="number" className='inptNumber' />
-
-
-                      <div className="squar">
-                        <FontAwesomeIcon icon={faMinus} style={{ fontSize: "15px" }} />
-                      </div>
+                    </td>
 
 
 
-                    </div>
-
-                  </td>
-
+                    <td><div className="dvImage"> <img src={item.orderImg} /></div></td>
+                  </tr>
 
 
-                  <td><div className="dvImage"> <img src={item.orderImg} /></div></td>
-                </tr>
-
-
-              </div>
-            ))
-
-            }
+                </div>
+              ))
+              }
 
 
 
 
 
-          </table>
+            </table>
+
+
+            {/* <button onClick={()=>{console.log(dtOrder[0].orderPrice[0]*orderCount[0])}}>Click</button> */}
 
 
 
-
+          </div>
         </div>
-      </div>
+      }
+
+
+
+
+
 
     </>
   )
