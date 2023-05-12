@@ -50,11 +50,8 @@ const [state, setState] = useState(initialValue)
   ])
 
   const [dtOrder, setDtOrder] = useState([])
-
   const [orderSatus, setOrderSatus] = useState(false);
-
-
-const [count, setCount] = useState(1)
+  const [count, setCount] = useState(1)
 
 
 
