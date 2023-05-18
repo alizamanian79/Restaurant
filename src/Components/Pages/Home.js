@@ -3,11 +3,14 @@
 
 
 import React, { useState } from 'react'
-import Food from '../Food/Food'
 
 // Import Components
 import Header from '../Header/Header'
+import Food from '../Food/Food'
+import Garson from '../Food/Garson'
 
+
+import { CartProvider } from 'react-use-cart'
 
 function Home() {
 
@@ -15,8 +18,11 @@ function Home() {
   
   return (
     <>
-    <Header />
+    <CartProvider>
+    <Header/>
     <Food />
+    <Garson/>
+    </CartProvider>
     </>
   )
 }
