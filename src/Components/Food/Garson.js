@@ -20,7 +20,7 @@ function Garson() {
         removeItem,
     } = useCart();
 
-    if (isEmpty) return <p>Your cart is empty</p>;
+    if (isEmpty) return "";
     return (
 
         <>
