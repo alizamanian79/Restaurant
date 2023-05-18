@@ -6,7 +6,7 @@ import "./Food.scss";
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
+import Header from '../Header/Header';
 
 
 import { useCart } from "react-use-cart";
@@ -30,9 +30,7 @@ function Food() {
 
   ])
 
-
-
-
+const [sarAshpaz, setSarAshpaz] = useState(true)
 
 
 
@@ -41,8 +39,9 @@ function Food() {
     <React.Fragment>
 
 
-{
-  dtCategoti.map((x)=>(
+<Header/>
+
+{sarAshpaz && dtCategoti.map((x)=>(
 <FoodRow foodtype={x.cName}>
 
 { dtFood.filter(foodCt => foodCt.fFilter == x.cName).map((item, index) => (

@@ -19,7 +19,6 @@ function Home() {
   return (
     <>
     <CartProvider>
-    <Header/>
     <Food />
     <Garson/>
     </CartProvider>
