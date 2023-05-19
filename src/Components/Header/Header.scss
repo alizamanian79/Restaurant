@@ -6,8 +6,10 @@
     flex-direction: column;
 
 
-    h3 {
+    .welcome{
         color: rgb(36, 35, 35);
+        font-family: yekanBakht;
+        margin: 10px 0;
     }
 
     .dvSearch {
@@ -85,4 +87,5 @@
 .filterActive{
     color: #ffffff !important;
     background-color: #f73030;
+    border: none !important;
 }

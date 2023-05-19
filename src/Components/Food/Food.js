@@ -32,8 +32,9 @@ function Food() {
   const [dtFoodState, setdtFoodState] = useState(false)
   const [dtCategoti, setdtCategoti] = useState([
     { cName: "پیتزا" },
+    {cName:"پیش غذا"},
     { cName: "سالاد" },
-    { cName: "کیک" },
+    { cName: "دسر" },
     { cName: "نوشیدنی" }
   ])
 
@@ -130,7 +131,7 @@ function Food() {
 
       <div className='dvHeader'>
 
-        <h3 >خوش امدید</h3>
+       <p className='welcome'>به رستوران ما خوش امدید</p>
 
         <div className='dvSearch'>
 
