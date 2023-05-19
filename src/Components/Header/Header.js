@@ -12,12 +12,11 @@ export default function Header(props) {
 
 
 
-    const [dtFilters, setdtFilters] = useState([
+const [dtFilters, setdtFilters] = useState([
         { filterName: "همه" },
         { filterName: "پرطرفدارها" },
-        { filterName: "تخفیف دار" },
-        { filterName: "پیشنهاد سراشپز" },
-      ])
+        { filterName: "پیشنهاد سراشپز" }
+])
     
 
 
@@ -48,8 +47,6 @@ export default function Header(props) {
 const initialFunHeader = () => {
 
 }
-
-
 
 
 useEffect(() => {

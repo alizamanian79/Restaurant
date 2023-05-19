@@ -71,7 +71,7 @@ function Garson() {
                         ))}
 
 
-                            <p>col {cartTotal}</p>
+                            <p>قیمت نهایی {cartTotal}</p>
 
                     </table>
 

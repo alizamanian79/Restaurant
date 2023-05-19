@@ -2,10 +2,10 @@
 
 
 import React from 'react'
-
-import "./Food.scss";
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import "./Food.scss";
 
 export default function FoodRow(props) {
     return (
