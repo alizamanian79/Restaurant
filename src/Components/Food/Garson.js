@@ -15,19 +15,27 @@ import "../Food/Food.scss"
 
 
 
+
 function Garson() {
 
-    const [showModal, setshowModal] = useState(false)
+    const [currencyValue, setCurrencyValue] = useState()
 
+    const [showModal, setshowModal] = useState(false)
     const sabtOrder = () => {
         const result = window.confirm('ایا از سفارش خود اطمینان دارید؟');
         if (result) {
-            setshowModal(true)
+            setshowModal(true);
+            var num = 5000
+            var formatted = String(cartTotal).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+
+            setCurrencyValue(formatted);
+
+
+
         } else {
             return
         }
     }
-
     const {
         isEmpty,
         totalUniqueItems,
@@ -39,11 +47,24 @@ function Garson() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if (isEmpty) return "";
     return (
-
         <>
-
             {showModal &&
                 <div className='dvModal'>
                     <div className="modal">
@@ -80,6 +101,12 @@ function Garson() {
 
 
                             </table>
+
+                            <div className='dvFactorTXT'>
+                                <p>قیمت پرداخت شده :{currencyValue} تومان </p>
+                            </div>
+                            
+
 
 
                         </div>
@@ -144,7 +171,7 @@ function Garson() {
                 <div className="dvCalculat">
 
                     <div className="left">
-                        <button onClick={sabtOrder}>قبت نهایی</button>
+                        <button onClick={sabtOrder}>ثبت نهایی</button>
                     </div>
 
                     <div className="right">

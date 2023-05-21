@@ -330,11 +330,11 @@
 
 
         .right {
-            width: 50%;
+            width: 70%;
             height: 100%;
             color: rgb(211, 59, 13);
             font-family: yekanBakhtBold;
-            font-size: 22px;
+            font-size: 20px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -342,7 +342,7 @@
         }
 
         .left {
-            width: 50%;
+            width: 30%;
             height: 100%;
           
             display: flex;
@@ -444,6 +444,18 @@
                 }
 
 
+            }
+
+            .dvFactorTXT{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    margin-top: 20px;
+                    font-family: yekanBakhtBold;
+                    font-size: 17px;
+                }
             }
         }
 
