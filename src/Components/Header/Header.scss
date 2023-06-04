@@ -7,7 +7,7 @@
 
 
     .welcome{
-        color: rgb(36, 35, 35);
+        color: rgb(255, 255, 255);
         font-family: yekanBakht;
         margin: 10px 0;
     }
@@ -35,6 +35,7 @@
             -o-border-radius: 20px;
             padding: 0 25px 0 0;
             position: relative;
+            color: red;
             font-family: "yekanBakht";
 }
     }
@@ -64,7 +65,7 @@
             .filter {
                 font-family: "yekanBakht";
                 margin: 0 0 0 10px;
-                color: #706f6f;
+                color: #cdcdcd;
                 min-width: 24%;
                 padding: 6px 0;
                 border-radius: 21px;

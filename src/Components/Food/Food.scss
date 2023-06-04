@@ -18,7 +18,7 @@
 
 
         h4 {
-            color: rgb(18, 18, 18);
+            color: white;
             margin-bottom: 12px;
             font: yekanBakht;
         }
@@ -36,11 +36,12 @@
             .cardFood {
                 min-width: 43%;
                 height: 100%;
-                background-color: rgb(255 255 255);
+                background-color: #565e7091;
                 box-shadow: 0px 1px 5px -1px rgb(91, 90, 90);
                 margin: 0 0 0 32px;
                 position: relative;
                 border-radius: 5px;
+                
                 -webkit-border-radius: 5px;
                 -moz-border-radius: 5px;
                 -ms-border-radius: 5px;
@@ -49,7 +50,7 @@
 
                 p {
                     font-family: 'YekanBakhtBold';
-                    color: black;
+                    color: #ffffff;
                     font-weight: 300;
                     width: 44%;
                     height: 11%;
@@ -76,7 +77,7 @@
                 }
 
                 .tCaption {
-                    color: #514f4f;
+                    color: #d3d1d1;
                     margin-top: 4rem;
                     font-size: 16px;
                 }
@@ -85,7 +86,7 @@
                     margin-top: 3px;
                     font-size: 14px;
                     width: 97%;
-                    color: #191919;
+                    color: #e3e3e3;
                     height: auto;
                     line-height: 22px;
                     font-family: 'YekanBakht';
@@ -120,7 +121,7 @@
                             align-items: center;
                             padding: 3px 16px;
                             margin: 0 9px;
-                            background-color: #141414;
+                            background-color: #f73030;
                             border-radius: 15px;
                             -webkit-border-radius: 15px;
                             -moz-border-radius: 15px;
@@ -259,7 +260,7 @@
                             .squar {
                                 padding: 10px 12px;
                                 margin: 0 5px;
-                                background-color: #a2a1a0;
+                                background-color: #f73030;
                                 border-radius: 3px;
                                 -webkit-border-radius: 3px;
                                 -moz-border-radius: 3px;
@@ -351,7 +352,7 @@
 
             button{
                 font-family: yekanBakhtBold;
-                font-size: 18px;
+                font-size: 13px;
                 padding: 12px 26px;
                 background-color: rgb(255, 81, 0);
                 color: white;
